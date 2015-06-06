@@ -9,11 +9,26 @@
 /* Begin PBXBuildFile section */
 		053C572A1B202BE7004DED99 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 053C57291B202BE7004DED99 /* main.m */; };
 		053C572D1B202BE7004DED99 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 053C572C1B202BE7004DED99 /* AppDelegate.m */; };
-		053C57301B202BE7004DED99 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 053C572F1B202BE7004DED99 /* ViewController.m */; };
-		053C57331B202BE7004DED99 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 053C57311B202BE7004DED99 /* Main.storyboard */; };
 		053C57351B202BE7004DED99 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 053C57341B202BE7004DED99 /* Images.xcassets */; };
 		053C57381B202BE7004DED99 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 053C57361B202BE7004DED99 /* LaunchScreen.xib */; };
-		053C57441B202BE7004DED99 /* WalletTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 053C57431B202BE7004DED99 /* WalletTests.m */; };
+		053C575D1B204498004DED99 /* RNOMoney.m in Sources */ = {isa = PBXBuildFile; fileRef = 053C575C1B204498004DED99 /* RNOMoney.m */; };
+		053C575E1B204498004DED99 /* RNOMoney.m in Sources */ = {isa = PBXBuildFile; fileRef = 053C575C1B204498004DED99 /* RNOMoney.m */; };
+		053C57621B2046EA004DED99 /* NSObject+GNUStepAddons.m in Sources */ = {isa = PBXBuildFile; fileRef = 053C57611B2046EA004DED99 /* NSObject+GNUStepAddons.m */; };
+		053C57631B2046EA004DED99 /* NSObject+GNUStepAddons.m in Sources */ = {isa = PBXBuildFile; fileRef = 053C57611B2046EA004DED99 /* NSObject+GNUStepAddons.m */; };
+		053C57651B2049DB004DED99 /* RNOMoneyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 053C57641B2049DB004DED99 /* RNOMoneyTest.m */; };
+		053C57681B22F5BD004DED99 /* RNOBrokerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 053C57671B22F5BD004DED99 /* RNOBrokerTest.m */; };
+		053C576B1B22F6F6004DED99 /* RNOBroker.m in Sources */ = {isa = PBXBuildFile; fileRef = 053C576A1B22F6F6004DED99 /* RNOBroker.m */; };
+		053C576C1B22F6F6004DED99 /* RNOBroker.m in Sources */ = {isa = PBXBuildFile; fileRef = 053C576A1B22F6F6004DED99 /* RNOBroker.m */; };
+		053C576E1B230C00004DED99 /* RNOWalletTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 053C576D1B230C00004DED99 /* RNOWalletTest.m */; };
+		053C57711B230DEB004DED99 /* RNOWallet.m in Sources */ = {isa = PBXBuildFile; fileRef = 053C57701B230DEB004DED99 /* RNOWallet.m */; };
+		053C57721B230DEB004DED99 /* RNOWallet.m in Sources */ = {isa = PBXBuildFile; fileRef = 053C57701B230DEB004DED99 /* RNOWallet.m */; };
+		053C57771B231D02004DED99 /* RNOSimpleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 053C57751B231D02004DED99 /* RNOSimpleViewController.m */; };
+		053C57781B231D02004DED99 /* RNOSimpleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 053C57751B231D02004DED99 /* RNOSimpleViewController.m */; };
+		053C57791B231D02004DED99 /* RNOSimpleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 053C57761B231D02004DED99 /* RNOSimpleViewController.xib */; };
+		053C577A1B231D02004DED99 /* RNOSimpleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 053C57761B231D02004DED99 /* RNOSimpleViewController.xib */; };
+		053C577D1B231D5E004DED99 /* RNOControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 053C577C1B231D5E004DED99 /* RNOControllerTests.m */; };
+		053C57801B233014004DED99 /* RNOWalletTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 053C577F1B233014004DED99 /* RNOWalletTableViewController.m */; };
+		053C57811B233014004DED99 /* RNOWalletTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 053C577F1B233014004DED99 /* RNOWalletTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +47,27 @@
 		053C57291B202BE7004DED99 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		053C572B1B202BE7004DED99 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		053C572C1B202BE7004DED99 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		053C572E1B202BE7004DED99 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		053C572F1B202BE7004DED99 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		053C57321B202BE7004DED99 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		053C57341B202BE7004DED99 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		053C57371B202BE7004DED99 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		053C573D1B202BE7004DED99 /* WalletTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WalletTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		053C57421B202BE7004DED99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		053C57431B202BE7004DED99 /* WalletTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WalletTests.m; sourceTree = "<group>"; };
+		053C575B1B204498004DED99 /* RNOMoney.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNOMoney.h; sourceTree = "<group>"; };
+		053C575C1B204498004DED99 /* RNOMoney.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNOMoney.m; sourceTree = "<group>"; };
+		053C57601B2046EA004DED99 /* NSObject+GNUStepAddons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+GNUStepAddons.h"; sourceTree = "<group>"; };
+		053C57611B2046EA004DED99 /* NSObject+GNUStepAddons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+GNUStepAddons.m"; sourceTree = "<group>"; };
+		053C57641B2049DB004DED99 /* RNOMoneyTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNOMoneyTest.m; sourceTree = "<group>"; };
+		053C57671B22F5BD004DED99 /* RNOBrokerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNOBrokerTest.m; sourceTree = "<group>"; };
+		053C57691B22F6F6004DED99 /* RNOBroker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNOBroker.h; sourceTree = "<group>"; };
+		053C576A1B22F6F6004DED99 /* RNOBroker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNOBroker.m; sourceTree = "<group>"; };
+		053C576D1B230C00004DED99 /* RNOWalletTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNOWalletTest.m; sourceTree = "<group>"; };
+		053C576F1B230DEB004DED99 /* RNOWallet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNOWallet.h; sourceTree = "<group>"; };
+		053C57701B230DEB004DED99 /* RNOWallet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNOWallet.m; sourceTree = "<group>"; };
+		053C57741B231D02004DED99 /* RNOSimpleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNOSimpleViewController.h; sourceTree = "<group>"; };
+		053C57751B231D02004DED99 /* RNOSimpleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNOSimpleViewController.m; sourceTree = "<group>"; };
+		053C57761B231D02004DED99 /* RNOSimpleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RNOSimpleViewController.xib; sourceTree = "<group>"; };
+		053C577C1B231D5E004DED99 /* RNOControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNOControllerTests.m; sourceTree = "<group>"; };
+		053C577E1B233014004DED99 /* RNOWalletTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNOWalletTableViewController.h; sourceTree = "<group>"; };
+		053C577F1B233014004DED99 /* RNOWalletTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNOWalletTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,14 +109,14 @@
 		053C57261B202BE7004DED99 /* Wallet */ = {
 			isa = PBXGroup;
 			children = (
+				053C57731B231CD4004DED99 /* New Group */,
+				053C575F1B204689004DED99 /* Categories */,
 				053C572B1B202BE7004DED99 /* AppDelegate.h */,
 				053C572C1B202BE7004DED99 /* AppDelegate.m */,
-				053C572E1B202BE7004DED99 /* ViewController.h */,
-				053C572F1B202BE7004DED99 /* ViewController.m */,
-				053C57311B202BE7004DED99 /* Main.storyboard */,
 				053C57341B202BE7004DED99 /* Images.xcassets */,
 				053C57361B202BE7004DED99 /* LaunchScreen.xib */,
 				053C57271B202BE7004DED99 /* Supporting Files */,
+				053C57531B202DAC004DED99 /* Models */,
 			);
 			path = Wallet;
 			sourceTree = "<group>";
@@ -105,7 +133,8 @@
 		053C57401B202BE7004DED99 /* WalletTests */ = {
 			isa = PBXGroup;
 			children = (
-				053C57431B202BE7004DED99 /* WalletTests.m */,
+				053C577B1B231D39004DED99 /* Controllers */,
+				053C574D1B202C53004DED99 /* Models */,
 				053C57411B202BE7004DED99 /* Supporting Files */,
 			);
 			path = WalletTests;
@@ -117,6 +146,58 @@
 				053C57421B202BE7004DED99 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		053C574D1B202C53004DED99 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				053C57641B2049DB004DED99 /* RNOMoneyTest.m */,
+				053C57671B22F5BD004DED99 /* RNOBrokerTest.m */,
+				053C576D1B230C00004DED99 /* RNOWalletTest.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		053C57531B202DAC004DED99 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				053C575B1B204498004DED99 /* RNOMoney.h */,
+				053C575C1B204498004DED99 /* RNOMoney.m */,
+				053C57691B22F6F6004DED99 /* RNOBroker.h */,
+				053C576A1B22F6F6004DED99 /* RNOBroker.m */,
+				053C576F1B230DEB004DED99 /* RNOWallet.h */,
+				053C57701B230DEB004DED99 /* RNOWallet.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		053C575F1B204689004DED99 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				053C57601B2046EA004DED99 /* NSObject+GNUStepAddons.h */,
+				053C57611B2046EA004DED99 /* NSObject+GNUStepAddons.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		053C57731B231CD4004DED99 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				053C57741B231D02004DED99 /* RNOSimpleViewController.h */,
+				053C57751B231D02004DED99 /* RNOSimpleViewController.m */,
+				053C57761B231D02004DED99 /* RNOSimpleViewController.xib */,
+				053C577E1B233014004DED99 /* RNOWalletTableViewController.h */,
+				053C577F1B233014004DED99 /* RNOWalletTableViewController.m */,
+			);
+			name = "New Group";
+			sourceTree = "<group>";
+		};
+		053C577B1B231D39004DED99 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				053C577C1B231D5E004DED99 /* RNOControllerTests.m */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,7 +280,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				053C57331B202BE7004DED99 /* Main.storyboard in Resources */,
+				053C57791B231D02004DED99 /* RNOSimpleViewController.xib in Resources */,
 				053C57381B202BE7004DED99 /* LaunchScreen.xib in Resources */,
 				053C57351B202BE7004DED99 /* Images.xcassets in Resources */,
 			);
@@ -209,6 +290,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				053C577A1B231D02004DED99 /* RNOSimpleViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,9 +301,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				053C57301B202BE7004DED99 /* ViewController.m in Sources */,
+				053C57801B233014004DED99 /* RNOWalletTableViewController.m in Sources */,
 				053C572D1B202BE7004DED99 /* AppDelegate.m in Sources */,
+				053C575D1B204498004DED99 /* RNOMoney.m in Sources */,
+				053C576B1B22F6F6004DED99 /* RNOBroker.m in Sources */,
 				053C572A1B202BE7004DED99 /* main.m in Sources */,
+				053C57711B230DEB004DED99 /* RNOWallet.m in Sources */,
+				053C57621B2046EA004DED99 /* NSObject+GNUStepAddons.m in Sources */,
+				053C57771B231D02004DED99 /* RNOSimpleViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,7 +316,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				053C57441B202BE7004DED99 /* WalletTests.m in Sources */,
+				053C575E1B204498004DED99 /* RNOMoney.m in Sources */,
+				053C57631B2046EA004DED99 /* NSObject+GNUStepAddons.m in Sources */,
+				053C576C1B22F6F6004DED99 /* RNOBroker.m in Sources */,
+				053C57721B230DEB004DED99 /* RNOWallet.m in Sources */,
+				053C57781B231D02004DED99 /* RNOSimpleViewController.m in Sources */,
+				053C577D1B231D5E004DED99 /* RNOControllerTests.m in Sources */,
+				053C57811B233014004DED99 /* RNOWalletTableViewController.m in Sources */,
+				053C57681B22F5BD004DED99 /* RNOBrokerTest.m in Sources */,
+				053C576E1B230C00004DED99 /* RNOWalletTest.m in Sources */,
+				053C57651B2049DB004DED99 /* RNOMoneyTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,14 +340,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		053C57311B202BE7004DED99 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				053C57321B202BE7004DED99 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		053C57361B202BE7004DED99 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
