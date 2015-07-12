@@ -8,10 +8,12 @@
 
 #import "RNOWalletTableViewController.h"
 #import "RNOWallet.h"
+#import "RNOBroker.h"
 
 @interface RNOWalletTableViewController ()
 
 @property (nonatomic, strong) RNOWallet *model;
+@property (nonatomic, strong) RNOBroker *broker;
 
 @end
 
@@ -29,6 +31,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self.broker addRate:2
+            fromCurrency:@"EUR"
+              toCurrency:@"USD"];
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -45,66 +51,40 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
-    return 1;
+    return [self.model countCurrencies]+1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return [self.model count]+1;
+    if ([self.model countCurrencies]== section) {
+        return 1;
+    }
+    return [self.model countForCurrency:[self.model.currenciesList objectAtIndex:section]]+1;
 }
 
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    static NSString *cellId= @"CellID";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1
+                                      reuseIdentifier:cellId];
+    };
+    RNOMoney *m;
+    if (indexPath.section == self.model.countCurrencies) {
+        m = [self.broker reduce:self.model toCurrency:@"EUR"];
+    }else{
+        if ([self.model countForCurrency:[self.model.currenciesList objectAtIndex:indexPath.section]] == indexPath.row) {
+            m = [self.model reduceForCurrency:[self.model.currenciesList objectAtIndex:indexPath.section]];
+        }else{
+            m = [self.model moneyAtIndex:indexPath.row
+                                       forCurrency:[self.model.currenciesList objectAtIndex:indexPath.section]];
+        }
+    }
     
-    // Configure the cell...
+    cell.textLabel.text = [NSString stringWithFormat:@"%@", m];
     
     return cell;
+    
 }
-*/
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

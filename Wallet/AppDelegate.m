@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "RNOWallet.h"
+#import "RNOMoney.h"
+#import "RNOWalletTableViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +20,21 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    RNOWallet *wallet = [[RNOWallet alloc] initWithAmount:10 currency:@"EUR"];
+    [wallet addMoney:[RNOMoney euroWithAmount:100]];
+    [wallet addMoney:[RNOMoney euroWithAmount:20]];
+    [wallet addMoney:[RNOMoney euroWithAmount:50]];
+    [wallet addMoney:[RNOMoney dollarWithAmount:10]];
+    [wallet addMoney:[RNOMoney dollarWithAmount:10]];
+    [wallet addMoney:[RNOMoney dollarWithAmount:50]];
+    
+    self.window.rootViewController = [[RNOWalletTableViewController alloc] initWithModel: wallet];
+    
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 

@@ -44,4 +44,80 @@
     
 }
 
+-(void) testSubstraction{
+    
+    RNOWallet *wallet = [[RNOWallet alloc] initWithAmount:20 currency:@"EUR"];
+    
+    [wallet takeMoney:[RNOMoney euroWithAmount:20]];
+    
+    NSUInteger total = [wallet count];
+    
+    XCTAssertEqual(total, 0, @"20€ - 20€ = 0€");
+    
+    
+}
+
+-(void) testThatSubstractionOfANonExistingMoneyThrowException{
+    
+    RNOWallet *wallet = [[RNOWallet alloc] initWithAmount:20 currency:@"EUR"];
+    
+    
+    XCTAssertThrows([wallet takeMoney:[RNOMoney euroWithAmount:10]], @"Substraction of a non existing money throw exception");
+    
+}
+
+-(void) testCountOfCurrencies{
+    RNOWallet *wallet = [[RNOWallet alloc] initWithAmount:10 currency:@"EUR"];
+    
+    [wallet addMoney:[RNOMoney dollarWithAmount:10]];
+    
+    XCTAssertEqual([wallet countCurrencies], 2, @"The number of currencies in the wallet should be two");
+    
+}
+
+
+-(void) testTotalMoneysOfOneCurrency{
+    
+    RNOWallet *wallet = [[RNOWallet alloc] initWithAmount:20 currency:@"EUR"];
+    
+    [wallet addMoney:[RNOMoney euroWithAmount:10]];
+    [wallet addMoney:[RNOMoney euroWithAmount:30]];
+    [wallet addMoney:[RNOMoney dollarWithAmount:10]];
+    
+    NSUInteger rows = [wallet countForCurrency:@"EUR"];
+    
+    XCTAssertEqual(rows, 3, @"Wallet should contain 3 objects for currency EUR");
+    
+}
+
+-(void) testMoneyAtIndexForCurrency{
+    
+    RNOWallet *wallet = [[RNOWallet alloc] initWithAmount:20 currency:@"EUR"];
+    
+    [wallet addMoney:[RNOMoney euroWithAmount:10]];
+    [wallet addMoney:[RNOMoney euroWithAmount:30]];
+    [wallet addMoney:[RNOMoney dollarWithAmount:10]];
+
+    RNOMoney *m = [wallet moneyAtIndex:1 forCurrency: @"EUR"];
+    
+    XCTAssertEqualObjects(m, [RNOMoney euroWithAmount:10], @"Both objects should be equals");
+    
+}
+
+-(void) testSimpleTotalMoneyForCurrency{
+    
+    RNOWallet *wallet = [[RNOWallet alloc] initWithAmount:20 currency:@"EUR"];
+    
+    [wallet addMoney:[RNOMoney dollarWithAmount:10]];
+    [wallet addMoney:[RNOMoney dollarWithAmount:10]];
+    [wallet addMoney:[RNOMoney euroWithAmount:10]];
+    
+    RNOMoney *totalEuros = [wallet reduceForCurrency: @"EUR"];
+    
+    RNOMoney *totalEurostest = [RNOMoney euroWithAmount:30];
+    
+    XCTAssertEqualObjects(totalEuros, totalEurostest, @"Should be equal if 30€=30€");
+    
+}
+
 @end

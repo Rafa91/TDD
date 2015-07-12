@@ -8,28 +8,30 @@
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
-#import "RNOSimpleViewController.h"
 #import "RNOWalletTableViewController.h"
 #import "RNOWallet.h"
+#import "RNOBroker.h"
 
 @interface RNOControllerTests : XCTestCase
-@property (nonatomic,strong) RNOSimpleViewController *simpleVC;
 @property (nonatomic, strong) UIButton *button;
 @property (nonatomic, strong) UILabel *label;
 @property (nonatomic, strong) RNOWalletTableViewController *walletVC;
 @property (nonatomic, strong) RNOWallet *wallet;
+@property (nonatomic, strong) RNOBroker *broker;
 @end
 
 @implementation RNOControllerTests
 
 - (void)setUp {
     [super setUp];
+    
+    self.broker =[[RNOBroker alloc] init];
+    [self.broker addRate:2
+            fromCurrency:@"EUR"
+              toCurrency:@"USD"];
+    
+    
     // Put setup code here. This method is called before the invocation of each test method in the class.
-    self.simpleVC = [[RNOSimpleViewController alloc] initWithNibName:nil bundle:nil];
-    self.button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [self.button setTitle:@"Hola!" forState:UIControlStateNormal];
-    self.label = [[UILabel alloc] initWithFrame:CGRectZero];
-    self.simpleVC.displayLabel = self.label;
     self.wallet = [[RNOWallet alloc] initWithAmount:1 currency:@"USD"];
     [self.wallet plus:[RNOMoney euroWithAmount:1]];
     self.walletVC = [[RNOWalletTableViewController alloc] initWithModel:self.wallet];
@@ -39,31 +41,23 @@
 - (void)tearDown {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
-    self.simpleVC = nil;
-    self.button = nil;
-    self.label = nil;
 }
 
--(void) testThatTextOnLabelIsEqualToTextOnButton{
-    
-    //mandamos el mensaje
-    [self.simpleVC displayText:self.button];
-    
-    //comprobamos que etiqueta y boton tienen el mismo texto
-    XCTAssertEqualObjects(self.button.titleLabel.text, self.label.text, @"Button and label should have the same text");
-}
 
--(void) testThatTableHasOneSection{
+
+-(void) testThatNumberOfCellsForCurrencyIsNumberOfMoneyPlusOne{
     
-    NSUInteger sections = [self.walletVC numberOfSectionsInTableView:nil];
-    XCTAssertEqual(sections, 1, @"There can only be one!");
+    
+    XCTAssertEqual([self.wallet countForCurrency:[self.wallet.currenciesList objectAtIndex:0]] + 1, [self.walletVC tableView:nil numberOfRowsInSection:0], @"Number of cells is the number of moneys plus 1: (the total)");
     
 }
 
--(void) testThatNumberOfCellsIsNumberOfMoneyPlusOne{
+-(void) testThatNumberOfSectionIsNumberOfCurrenciesInWalletPlusOne{
     
-    XCTAssertEqual(self.wallet.count + 1, [self.walletVC tableView:nil numberOfRowsInSection:0], @"Number of cells is the number of moneys plus 1: (the total)");
+    XCTAssertEqual([self.wallet countCurrencies]+1, [self.walletVC numberOfSectionsInTableView:nil], @"Number of sections isthe number of currencies plus 1");
     
 }
+
+
 
 @end
